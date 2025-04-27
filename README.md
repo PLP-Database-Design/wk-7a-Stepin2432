@@ -61,3 +61,19 @@ Task:
 
 ---
 Good luck 🚀
+
+# Explanation for 1st Question
+To transform the given table into **1NF**, we need to ensure that each row contains a single product for an order.
+
+### Explanation:
+1. **New Table Structure**: The new table `ProductDetail_1NF` will have three columns: `OrderID`, `CustomerName`, and `Product`.
+2. **Normalization**: Each product is now represented in a separate row, ensuring compliance with **1NF**.
+3. **Data Insertion**: The `Products` column values are split into individual rows for each product.
+
+# Explanation for 2nd Question
+To transform the table into **2NF**, we need to remove the partial dependency of `CustomerName` on `OrderID`. This can be achieved by splitting the table into two separate tables: one for `OrderID` and `CustomerName`, and another for `OrderID`, `Product`, and `Quantity`.
+
+### Explanation:
+1. **Orders Table**: Contains `OrderID` and `CustomerName`, removing the partial dependency of `CustomerName` on `OrderID`.
+2. **OrderDetails_2NF Table**: Contains `OrderID`, `Product`, and `Quantity`, ensuring that all non-key columns fully depend on the composite primary key (`OrderID`, `Product`).
+3. **Foreign Key**: Establishes a relationship between the `Orders` table and the `OrderDetails_2NF` table.
